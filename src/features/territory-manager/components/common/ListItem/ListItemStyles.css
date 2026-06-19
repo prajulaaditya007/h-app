@@ -1,0 +1,94 @@
+.list-item-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  background-color: var(--white);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px var(--onyx-shadow);
+  border-left: 5px solid var(--baby-blue-ice);
+}
+
+.list-item-container.clickable {
+  cursor: pointer;
+}
+
+.list-item-container.clickable:hover {
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: 0 4px 10px var(--onyx-shadow);
+  border-color: var(--laser-blue);
+}
+
+/* Variant styles */
+.list-item-container.territory {
+  border-left: 5px solid var(--steel-azure);
+}
+
+.list-item-container.sub-territory {
+  border-left: 5px solid var(--baby-blue-ice);
+}
+
+.list-item-container.branch {
+  border-left: 5px solid var(--baby-blue-ice);
+}
+
+/* Selection highlight using Baby Blue Ice & Laser Blue glow */
+.list-item-container.selected {
+  background-color: rgba(135, 191, 255, 0.15); /* Tint of Baby Blue Ice */
+  border-color: var(--laser-blue);
+  border-left-color: var(--laser-blue);
+  box-shadow: 0 0 0 2px rgba(0, 96, 230, 0.15);
+}
+
+.list-item-start-slot {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.list-item-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.list-item-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--onyx);
+}
+
+.list-item-container.territory .list-item-label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.list-item-container.selected .list-item-label {
+  color: var(--laser-blue);
+  font-weight: 600;
+}
+
+.list-item-sublabel {
+  font-size: 11px;
+  color: var(--onyx-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.list-item-end-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}

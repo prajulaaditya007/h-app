@@ -1,0 +1,146 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--icy-blue);
+}
+
+/* Header: Steel Azure, White text */
+.app-header {
+  background-color: var(--steel-azure);
+  color: var(--white);
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(15, 15, 15, 0.15);
+}
+
+.app-logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.user-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-avatar {
+  font-size: 18px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-logout:hover {
+  background-color: var(--white);
+  color: var(--steel-azure);
+}
+
+/* Main Content Wrapper */
+.main-content {
+  flex-grow: 1;
+  padding: 16px 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Breadcrumbs */
+.breadcrumbs-nav {
+  margin-bottom: 16px;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--onyx-light);
+}
+
+.breadcrumb-separator {
+  margin: 0 8px;
+  color: var(--onyx-light);
+  opacity: 0.5;
+}
+
+.breadcrumb-item.active {
+  color: var(--onyx);
+  font-weight: 600;
+}
+
+/* Page header */
+.page-header-title {
+  margin-bottom: 20px;
+}
+
+.page-header-title h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--onyx);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Empty State Card */
+.empty-state-card {
+  background-color: var(--white);
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 12px;
+  padding: 80px 40px;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--onyx-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--onyx);
+  margin-bottom: 8px;
+}
+
+.empty-state-card p {
+  font-size: 13px;
+  color: var(--onyx-light);
+  max-width: 320px;
+  margin: 0 auto;
+}

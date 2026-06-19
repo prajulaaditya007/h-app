@@ -1,0 +1,87 @@
+.move-branches-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label-bold {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--onyx-light);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.selected-branches-display {
+  padding: 8px 12px;
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 6px;
+  background-color: rgba(15, 15, 15, 0.03);
+  color: var(--onyx);
+  max-height: 70px;
+  overflow-y: auto;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  line-height: 1.4;
+}
+
+.select-fields-card {
+  border: 1px solid var(--baby-blue-ice);
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--white);
+  margin-bottom: 16px;
+}
+
+.form-actions-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  border-top: 1px solid rgba(15, 15, 15, 0.15); /* Onyx lighter divider line */
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: var(--laser-blue);
+  color: var(--white);
+  border: 1px solid var(--laser-blue);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 96, 230, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 96, 230, 0.35);
+  background-color: #0052cc;
+}
+
+.btn-primary:disabled {
+  background-color: rgba(0, 96, 230, 0.5);
+  border-color: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--onyx-light);
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-secondary:hover {
+  border-color: var(--laser-blue);
+  color: var(--laser-blue);
+}

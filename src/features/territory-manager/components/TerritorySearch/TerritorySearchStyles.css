@@ -1,0 +1,142 @@
+.territory-search-card {
+  background-color: var(--white);
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--onyx-shadow);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.search-columns-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.search-input-col {
+  width: 30%;
+  max-width: 30%;
+  flex: 0 0 30%;
+  position: relative;
+}
+
+.search-radio-col {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Autocomplete suggestion dropdown */
+.autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px var(--onyx-shadow);
+  margin-top: 6px;
+  list-style: none;
+  z-index: 1050;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 4px 0;
+  animation: fadeSlideDown 0.12s ease-out;
+}
+
+.autocomplete-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.autocomplete-item:hover {
+  background-color: rgba(0, 96, 230, 0.08); /* Laser Blue tint */
+}
+
+.autocomplete-icon-badge {
+  background-color: rgba(0, 96, 230, 0.1);
+  color: var(--laser-blue);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.autocomplete-text {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--onyx);
+}
+
+/* Radio selectors styling */
+.search-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.search-radio-input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--laser-blue);
+}
+
+.search-radio-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--onyx);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Loading overlay/indicator */
+.search-loading-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 6px;
+  background-color: var(--white);
+  border: 1px solid var(--baby-blue-ice);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px var(--onyx-shadow);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 1050;
+}
+
+.spinner-border-sm {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--baby-blue-ice);
+  border-top-color: var(--laser-blue);
+  border-radius: 50%;
+  animation: spinnerRotate 0.75s linear infinite;
+  display: inline-block;
+}
+
+.search-loading-text {
+  font-size: 12px;
+  color: var(--onyx-light);
+  font-weight: 500;
+}
+
+@keyframes spinnerRotate {
+  to { transform: rotate(360deg); }
+}
