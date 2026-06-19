@@ -1,0 +1,103 @@
+import React, { useState, useMemo } from 'react';
+import { useAppSelector, useAppDispatch } from '../store';
+import { setSelectedTerritory } from '../store/territorySlice';
+import { TerritoryAccordion } from './TerritoryAccordion';
+import { Search } from './common/Search';
+
+interface TerritoryListPanelProps {
+  totalBranchCount: number;
+}
+
+/**
+ * Left column panel: territory search, ALL TERRITORY row, and the recursive accordion.
+ * Owns the localSearchQuery state and the visibleNodeIds computation.
+ */
+export const TerritoryListPanel: React.FC<TerritoryListPanelProps> = ({
+  totalBranchCount,
+}) => {
+  const dispatch = useAppDispatch();
+  const [localSearchQuery, setLocalSearchQuery] = useState('');
+
+  const nodesById = useAppSelector((s) => s.territory.nodesById);
+  const rootNodeIds = useAppSelector((s) => s.territory.rootNodeIds);
+  const selectedTerritoryId = useAppSelector((s) => s.territory.selectedTerritoryId);
+  const globalSearchQuery = useAppSelector((s) => s.territory.globalSearchQuery);
+  const searchType = useAppSelector((s) => s.territory.searchType);
+  const hasUnpublishedChanges = useAppSelector((s) => s.territory.hasUnpublishedChanges);
+
+  const allNodesList = useMemo(() => Object.values(nodesById), [nodesById]);
+
+  const visibleNodeIds = useMemo(() => {
+    const visible = new Set<number>();
+    const query = (localSearchQuery.trim() || (searchType === 'individual' ? globalSearchQuery.trim() : '')).toLowerCase();
+    if (!query) {
+      allNodesList.forEach((n) => visible.add(n.nodeId));
+      return visible;
+    }
+
+    const matches = allNodesList.filter((n) => n.nodeNm.toLowerCase().includes(query) || (n.nodeDesc && n.nodeDesc.toLowerCase().includes(query)));
+    matches.forEach((m) => {
+      visible.add(m.nodeId);
+      let pId = m.parentNodeId;
+      while (pId) {
+        visible.add(pId);
+        pId = nodesById[pId]?.parentNodeId;
+      }
+    });
+
+    return visible;
+  }, [localSearchQuery, globalSearchQuery, searchType, allNodesList, nodesById]);
+
+  const handleSelectAll = () => {
+    dispatch(setSelectedTerritory(null));
+  };
+
+  return (
+    <div className="d-flex flex-column h-100">
+      <div className="d-flex justify-content-between align-items-center mb-2">
+        <h3 className="h6 text-uppercase fw-bold text-muted mb-0">Territories List</h3>
+      </div>
+      <div className="mb-2">
+        <Search id="search-territories" placeholder="Search territories..." value={localSearchQuery} onChange={setLocalSearchQuery} />
+      </div>
+
+      <div className="overflow-y-auto flex-grow-1 pe-1"
+        style={{ maxHeight: '50vh', minHeight: '350px' }}>
+        {/* ALL TERRITORY row */}
+        <div onClick={handleSelectAll}
+          className={`border rounded mb-2 d-flex align-items-center justify-content-between p-2 ${selectedTerritoryId === null ? 'border-success bg-success-subtle text-success-emphasis' : 'border-light-subtle bg-body'}`}
+          style={{ cursor: 'pointer', borderLeft: selectedTerritoryId === null ? '5px solid #d9534f' : undefined, transition: 'all 0.15s ease-in-out' }}>
+          <div className="d-flex align-items-center gap-2">
+            <span className="d-inline-block rounded-circle bg-success" style={{ width: '6px', height: '6px', marginLeft: '7px', marginRight: '7px' }} />
+            <div className="fw-semibold">ALL TERRITORY</div>
+          </div>
+          <div className="d-flex align-items-center gap-2">
+            <span className="badge bg-light text-dark border">{totalBranchCount}</span>
+            <button className="btn btn-sm btn-link p-0 text-dark font-monospace fw-bold text-decoration-none"
+              onClick={(e) => { e.stopPropagation(); console.log('Actions for ALL TERRITORY clicked'); }}>
+              •••
+            </button>
+          </div>
+        </div>
+        {rootNodeIds.map((nodeId) => (
+          <TerritoryAccordion key={nodeId} nodeId={nodeId} visibleNodeIds={visibleNodeIds} />
+        ))}
+      </div>
+
+      {hasUnpublishedChanges && (
+        <div 
+          className="mt-3 p-2 border rounded d-flex align-items-center justify-content-center gap-2 fw-semibold small"
+          style={{ 
+            backgroundColor: '#fffbeb', 
+            borderColor: '#fef3c7', 
+            color: '#b45309',
+            animation: 'fadeIn 0.2s ease-in-out',
+            boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+          }}
+        >
+          <span>⚠️ Changes are not yet published</span>
+        </div>
+      )}
+    </div>
+  );
+};
