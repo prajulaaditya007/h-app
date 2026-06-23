@@ -1,6 +1,6 @@
 import React from 'react';
 import type { TerritoryHierarchyBranch } from '../../types';
-import { ListItem, Popover } from '../../../../components/ui';
+import { ListItem, Popover } from '@/components/ui';
 import './AssignedBranchItemStyles.css';
 
 interface AssignedBranchItemProps {

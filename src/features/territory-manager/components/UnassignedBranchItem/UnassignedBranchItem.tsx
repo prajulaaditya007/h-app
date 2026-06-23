@@ -1,6 +1,6 @@
 import React from 'react';
 import type { UnassignedBranch } from '../../types';
-import { ListItem, Popover } from '../../../../components/ui';
+import { ListItem, Popover } from '@/components/ui';
 import './UnassignedBranchItemStyles.css';
 
 interface UnassignedBranchItemProps {

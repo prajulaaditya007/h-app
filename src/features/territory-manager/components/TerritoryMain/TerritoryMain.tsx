@@ -1,10 +1,10 @@
 import React, { useMemo, useState, useRef, useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../../store';
+import { useAppSelector, useAppDispatch } from '@/store';
 import { setShowPanel, setIsPublishing, setHasUnpublishedChanges } from '../../store/territorySlice';
 import { TerritoryListPanel } from '../TerritoryListPanel/TerritoryListPanel';
 import { AssignedBranchList } from '../AssignedBranchList/AssignedBranchList';
 import { UnassignedBranchList } from '../UnassignedBranchList/UnassignedBranchList';
-import { Modal } from '../../../../components/ui';
+import { Modal } from '@/components/ui';
 import { BankDetailsSidebar } from '../BankDetailsSidebar/BankDetailsSidebar';
 import { toast } from 'sonner';
 import './TerritoryMainStyles.css';

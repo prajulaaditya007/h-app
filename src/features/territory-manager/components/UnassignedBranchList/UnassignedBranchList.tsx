@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../../store';
+import { useAppSelector, useAppDispatch } from '@/store';
 import {
   setSelectedBranches,
   openModal,
   removeUnassignedBranch,
   removeUnassignedBranchesBatch,
 } from '../../store/territorySlice';
-import { useLazyList } from '../../../../hooks/useLazyList';
+import { useLazyList } from '@/hooks/useLazyList';
 import { UnassignedBranchItem } from '../UnassignedBranchItem/UnassignedBranchItem';
-import { Search } from '../../../../components/ui';
+import { Search } from '@/components/ui';
 import { AssignModal } from '../modals/AssignModal/AssignModal';
 import { toast } from 'sonner';
 import './UnassignedBranchListStyles.css';

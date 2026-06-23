@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../../store';
+import { useAppSelector, useAppDispatch } from '@/store';
 import { setSelectedTerritory } from '../../store/territorySlice';
 import { TerritoryAccordion } from '../TerritoryAccordion/TerritoryAccordion';
-import { Search } from '../../../../components/ui';
+import { Search } from '@/components/ui';
 import './TerritoryListPanelStyles.css';
 
 interface TerritoryListPanelProps {

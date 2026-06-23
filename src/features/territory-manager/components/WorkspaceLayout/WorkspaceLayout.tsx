@@ -1,7 +1,7 @@
 import React from 'react';
 import { TerritorySearch } from '../TerritorySearch/TerritorySearch';
 import { TerritoryMain } from '../TerritoryMain/TerritoryMain';
-import { Footer } from '../../../../components/ui';
+import { Footer } from '@/components/ui';
 import './WorkspaceLayoutStyles.css';
 
 export const WorkspaceLayout: React.FC = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from '../../../../../store';
+import { useAppSelector, useAppDispatch } from '@/store';
 import { assignBranchesBatch, closeModal } from '../../../store/territorySlice';
 import type { UnassignedBranch } from '../../../types';
-import { Modal } from '../../../../../components/ui';
+import { Modal } from '@/components/ui';
 import { MoveBranchesForm } from '../MoveBranchesForm/MoveBranchesForm';
 import { toast } from 'sonner';
 import './AssignModalStyles.css';
