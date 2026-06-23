@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '../../../store';
-import { Dropdown } from '../Dropdown/Dropdown';
+import { useAppSelector } from '../../../../../store';
+import { Dropdown } from '../../../../../components/ui';
 import './MoveBranchesFormStyles.css';
 
 interface MoveBranchesFormProps {

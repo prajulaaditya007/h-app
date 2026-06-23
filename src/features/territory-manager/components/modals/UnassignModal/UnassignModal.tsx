@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from '../../../store';
+import { useAppSelector, useAppDispatch } from '../../../../../store';
 import { moveBranchesBatch, closeModal } from '../../../store/territorySlice';
 import type { TerritoryHierarchyNode } from '../../../types';
-import { Modal } from '../../Modal/Modal';
+import { Modal } from '../../../../../components/ui';
 import { MoveBranchesForm } from '../MoveBranchesForm/MoveBranchesForm';
 import { toast } from 'sonner';
 import './UnassignModalStyles.css';

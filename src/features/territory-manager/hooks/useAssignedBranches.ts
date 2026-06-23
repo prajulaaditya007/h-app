@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useAppSelector } from '../store';
+import { useAppSelector } from '../../../store';
 import type { TerritoryHierarchyBranch } from '../types';
 
 export type AssignedBranchEntry = {

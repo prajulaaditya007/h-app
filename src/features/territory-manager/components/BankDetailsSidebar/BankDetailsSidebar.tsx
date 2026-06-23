@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAppSelector } from '../../store';
+import { useAppSelector } from '../../../../store';
 import './BankDetailsSidebarStyles.css';
 
 interface BankDetailsSidebarProps {

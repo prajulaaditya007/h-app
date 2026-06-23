@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useAppSelector, useAppDispatch } from '../../store';
+import { useAppSelector, useAppDispatch } from '../../../../store';
 import { setSelectedTerritory } from '../../store/territorySlice';
-import { ListItem } from '../common/ListItem/ListItem';
+import { ListItem } from '../../../../components/ui';
 import './TerritoryAccordionStyles.css';
 
 export interface TerritoryAccordionProps {

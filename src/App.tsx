@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { store } from './features/territory-manager/store';
+import { store } from './store';
 import { WorkspaceLayout } from './features/territory-manager/components';
 import './App.css';
 

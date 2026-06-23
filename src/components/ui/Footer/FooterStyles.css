@@ -6,6 +6,7 @@
   align-items: center;
   background-color: transparent;
   margin-top: auto;
+  border-style: solid none none none;
 }
 
 .footer-text {

@@ -13,14 +13,10 @@ export { AssignedBranchItem } from './AssignedBranchItem/AssignedBranchItem';
 export { UnassignedBranchList } from './UnassignedBranchList/UnassignedBranchList';
 export { UnassignedBranchItem } from './UnassignedBranchItem/UnassignedBranchItem';
 
-// Common / reusable
-export { Search } from './common/Search/Search';
-export { Dropdown } from './common/Dropdown/Dropdown';
-export { MoveBranchesForm } from './common/MoveBranchesForm/MoveBranchesForm';
-export { AssignModal } from './common/AssignModal/AssignModal';
-export { UnassignModal } from './common/UnassignModal/UnassignModal';
+// Sidebar
+export { BankDetailsSidebar } from './BankDetailsSidebar/BankDetailsSidebar';
 
-// Shared modal shell
-export { Modal } from './Modal/Modal';
-export { Footer } from './common/Footer/Footer';
-
+// Business Modals / Forms
+export { AssignModal } from './modals/AssignModal/AssignModal';
+export { UnassignModal } from './modals/UnassignModal/UnassignModal';
+export { MoveBranchesForm } from './modals/MoveBranchesForm/MoveBranchesForm';

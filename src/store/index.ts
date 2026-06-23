@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { type TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import territoryReducer from './territorySlice';
+import territoryReducer from '../features/territory-manager/store/territorySlice';
 
 export const store = configureStore({
   reducer: {

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { useAppSelector, useAppDispatch } from '../../store';
+import { useAppSelector, useAppDispatch } from '../../../../store';
 import {
   setSelectedBranches,
   openModal,
@@ -7,11 +7,11 @@ import {
   removeBranchesBatch,
   unassignBranch,
 } from '../../store/territorySlice';
-import { useLazyList } from '../../utils/useLazyList';
-import { useAssignedBranches } from '../../utils/useAssignedBranches';
+import { useLazyList } from '../../../../hooks/useLazyList';
+import { useAssignedBranches } from '../../hooks/useAssignedBranches';
 import { AssignedBranchItem } from '../AssignedBranchItem/AssignedBranchItem';
-import { Search } from '../common/Search/Search';
-import { UnassignModal } from '../common/UnassignModal/UnassignModal';
+import { Search } from '../../../../components/ui';
+import { UnassignModal } from '../modals/UnassignModal/UnassignModal';
 import { toast } from 'sonner';
 import './AssignedBranchListStyles.css';
 
